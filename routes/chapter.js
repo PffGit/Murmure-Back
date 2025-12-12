@@ -5,13 +5,13 @@ require("../models/connection");
 const Chapter = require("../models/chapters");
 
 router.get("/", async (req, res) => {
-  const chapters = await Chapter.find();
+  const chapters = await Chapter.find().sort({ index: 1 });
   res.json({ result: true, chapters });
 });
 
 router.get("/:id", async (req, res) => {
   try {
-    const chapter = await Chapter.findOne({ nbChapter: req.params.id });
+    const chapter = await Chapter.findOne({ index: req.params.id });
     if (!chapter) return res.status(404).json({ result: false, message: "Not found" });
     res.json({ result: true, chapter });
   } catch (err) {

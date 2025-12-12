@@ -40,7 +40,7 @@ OPENAI_API_KEY=*MyPersonalChatGptKey*
 ```
 
 To add the data to the DB for tests:
-Copy your connection string from your .env file
+Make sure that your connection string exist in your .env file and run:
 ```
-mongoimport "*Your connection string*" --collection chapters --file data/chapterData.json --type json --jsonArray
+inode ./scripts/seed.js
 ```

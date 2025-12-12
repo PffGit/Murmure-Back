@@ -9,7 +9,7 @@ test("GET /chapters should return all chapters", async () => {
   expect(res.body.result).toBe(true);
 
   expect(res.body.chapters.length).toBeGreaterThan(1);
-  expect(res.body.chapters[1].nbChapter).toBe(2);
+  expect(res.body.chapters[1].index).toBe(2);
 });
 
 test("GET /chapters/:id should return a single chapter", async () => {
@@ -18,7 +18,7 @@ test("GET /chapters/:id should return a single chapter", async () => {
   expect(res.status).toBe(200);
   expect(res.body.result).toBe(true);
 
-  expect(res.body.chapter.titleChapter).toBe("Chapitre 2: Le lâcher-prise");
+  expect(res.body.chapter.title).toBe("Chapitre 2: Le lâcher-prise");
 });
 
 test("GET /chapters/:id should return 404 if not found", async () => {
