@@ -9,7 +9,7 @@ require("./models/connection");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require("./routes/users");
-var chapterRouter = require("./routes/chapter");
+var chaptersRouter = require("./routes/chapters");
 var meditationRouter = require('./routes/meditation');
 
 var app = express();
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use("/users", usersRouter);
-app.use("/chapter", chapterRouter);
+app.use("/chapters", chaptersRouter);
 app.use('/meditation', meditationRouter);
 
 

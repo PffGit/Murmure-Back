@@ -11,9 +11,9 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const chapter = await Chapter.findOne({ index: req.params.id });
-    if (!chapter) return res.status(404).json({ result: false, message: "Not found" });
-    res.json({ result: true, chapter });
+    const chapters = await Chapter.findOne({ index: req.params.id });
+    if (!chapters) return res.status(404).json({ result: false, message: "Not found" });
+    res.json({ result: true, chapters });
   } catch (err) {
     res.status(400).json({ result: false, message: "Invalid ID" });
   }
