@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const Chapter = require('../models/chapters');
 const User = require('../models/users');
+const Meditation = require('../models/meditations');
 require('dotenv').config();
 
 // Lire le fichier JSON
 const chapterData = JSON.parse(fs.readFileSync('data/chapters.json', 'utf-8'));
 const userData = JSON.parse(fs.readFileSync('data/users.json', 'utf-8'));
+const meditationData = JSON.parse(
+  fs.readFileSync('data/meditations.json', 'utf-8')
+);
 
 const importData = async () => {
   try {
@@ -23,6 +27,14 @@ const importData = async () => {
 
     await User.create(userData);
     console.log('🌱 Données importées avec succès !');
+
+    // Vider avant:
+    await Meditation.deleteMany();
+      console.log('Données méditations précédentes effacées');
+
+    // Importer
+    await Meditation.create(meditationData);
+    console.log('Données méditation importées avec succès !');
 
     process.exit();
   } catch (error) {
