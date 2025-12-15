@@ -1,0 +1,67 @@
+[
+  {
+ 
+    "theme": "anxiete",
+    "mode": "guidee",
+    "duration": 3,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765279887/Murmure_Anxiete_3_min_abgfhl.mp3"
+ 
+  },
+  {
+
+    "theme": "anxiete",
+    "mode": "guidee",
+    "duration": 5,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765199945/Murmure__Medit_detente_3_min.m4a"
+    
+
+  },
+  {
+   
+    "theme": "detente",
+    "mode": "guidee",
+    "duration": 3,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765199945/Murmure__Medit_detente_3_min.m4a"
+  
+  },
+  {
+  
+    "theme": "detente",
+    "mode": "guidee",
+    "duration": 5,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765199945/Murmure__Medit_detente_3_min.m4a",
+    "imageUrl": ""
+
+  },
+  {
+
+    "theme": "detente",
+    "mode": "guidee",
+    "duration": 5,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765199945/Murmure__Medit_detente_3_min.m4a"
+  },
+  {
+
+    "theme": "anxiete",
+    "mode": "guidee",
+    "duration": 10,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765199945/Murmure__Medit_detente_3_min.m4a"
+
+  },
+  {
+
+    "theme": "sommeil",
+    "mode": "guidee",
+    "duration": 3,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765279302/Murmure_Sommeil_3min_y34fz0.mp3"
+
+  },
+  {
+
+    "theme": "sommeil",
+    "mode": "guidee",
+    "duration": 5,
+    "audioUrl": "https://res.cloudinary.com/dmbowwvt8/video/upload/v1765279302/Murmure_Sommeil_3min_y34fz0.mp3"
+
+  }
+]

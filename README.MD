@@ -42,5 +42,5 @@ OPENAI_API_KEY=*MyPersonalChatGptKey*
 To add the data to the DB for tests:
 Make sure that your connection string exist in your .env file and run:
 ```
-inode ./scripts/seed.js
+node ./scripts/seed.js
 ```

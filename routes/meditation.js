@@ -1,22 +1,20 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Meditation = require("../models/meditations");
-const { checkBody } = require("../modules/checkBody");
+const Meditation = require('../models/meditations');
+const { checkBody } = require('../modules/checkBody');
 // Tableaux des url en fonction des choix theme, duration pour le mode "guidee" et éventuellement "solo" (si url musique ajouté plus tard)
 
 // Données à intégrer à la base de données de test en bas du fichier, à effacer à la fin:
 
-router.post("/player", async (req, res) => {
+router.post('/player', async (req, res) => {
   try {
     const { theme, mode, duration } = req.body;
 
-    console.log("POST /meditation/player :", theme, mode, duration);
+    console.log('POST /meditation/player :', theme, mode, duration);
 
     // Vérifier que toutes les données sont là
-    if (!checkBody(req.body, ["theme", "mode", "duration"])) {
-      return res
-        .status(400)
-        .json({ result: false, error: "Missing or empty fields" });
+    if (!checkBody(req.body, ['theme', 'mode', 'duration'])) {
+      return res.status(400).json({ result: false, error: 'Missing or empty fields' });
     }
 
     // Identifier la bonne méditation
@@ -25,12 +23,12 @@ router.post("/player", async (req, res) => {
       mode,
       duration: Number(duration),
     });
-    console.log("entry =", entry);
+    console.log('entry =', entry);
 
     if (!entry) {
       return res.status(404).json({
         result: false,
-        error: "Aucune méditation trouvée pour ces paramètres.",
+        error: 'Aucune méditation trouvée pour ces paramètres.',
       });
     }
 
@@ -40,15 +38,15 @@ router.post("/player", async (req, res) => {
       audioUrl: entry.audioUrl,
     });
   } catch (error) {
-    console.error("Erreur /meditation/player :", error);
-    res.status(500).json({ result: false, error: "Erreur serveur" });
+    console.error('Erreur /meditation/player :', error);
+    res.status(500).json({ result: false, error: 'Erreur serveur' });
   }
 });
 
 // *****************************************************
 // Module backend pour ajouter des méditations (mais non reporté sur le front) - Mode production
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const { theme, mode, duration, audioUrl, imageUrl } = req.body;
 
   const newMeditation = new Meditation({
@@ -59,7 +57,7 @@ router.post("/", (req, res) => {
     imageUrl,
   });
   newMeditation.save().then((newMeditation) => {
-    console.log("New Meditation saved", newMeditation);
+    console.log('New Meditation saved', newMeditation);
     Meditation.find().then((allMeditations) => res.json({ allMeditations }));
   });
 });
